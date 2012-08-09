@@ -9,7 +9,7 @@
         "type" : "git", 
         "url" : "git@github.com:jprichardson/npm-latest.git"
     },
-    "keywords" : [],
+    "keywords" : ["npm", "latest", "version"],
     "author" : "JP Richardson <jprichardson@gmail.com>",
     "licenses" : [ {
         "type" : "MIT"
