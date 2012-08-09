@@ -1,29 +1,24 @@
 {
     "name" : "npm-latest", 
     "version" : "0.0.1",
-    "description" :"",
+    "description" :"Quickly find the latest version of a package in npm.",
     "homepage" : [
-       ""
+       "https://github.com/jprichardson/npm-latest.git"
     ],
     "repository" : {
         "type" : "git", 
-        "url" : ""
+        "url" : "git@github.com:jprichardson/npm-latest.git"
     },
     "keywords" : [],
     "author" : "JP Richardson <jprichardson@gmail.com>",
     "licenses" : [ {
-        "type" : "MIT",
-        "url" : ""
+        "type" : "MIT"
     }],
     "dependencies" : {
         "request": "2.10.x",
         "colors": "0.6.x"
     },
      "devDepdencies":{},
-    "main" : "./lib/npm-latest.js",
-    "scripts": {
-        "test": "mocha test"
-    },
     "bin": {
         "npm-latest": "./bin/npm-latest"
     },
