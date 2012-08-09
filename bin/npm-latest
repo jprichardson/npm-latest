@@ -1,0 +1,82 @@
+#!/usr/bin/env node
+
+var request = require('request')
+  , colors = require('colors')
+  , path = require('path')
+  , fs = require('fs')
+  , util = require('util');
+
+var NPM_URL = "http://registry.npmjs.org/%s";
+
+function main() {
+    if (process.argv.length != 3) {
+        displayHelp();
+    } else {
+        var packageName = process.argv[2];
+        var url = util.format(NPM_URL, packageName);
+        request(url, function(err, response, body) {
+            if (err) {
+                console.log("ERROR: ");
+                console.log("\t" + err.message);
+                console.log("\thttp code: " + response.statusCode);
+            } else {
+                var npmObj = JSON.parse(body);
+                if (npmObj.error) {
+                    if (npmObj.error === "not_found") {
+                        console.log("");
+                        console.log("  Package '%s' not found in NPM.", colors.blue(packageName));
+                        console.log("");
+                    } else {
+                        console.log("ERROR");
+                        console.log(npmObj.reason);
+                    }
+                } else {
+                    var latest = getLatest(npmObj);
+
+                    console.log("");
+                    console.log("  " + colors.blue(packageName + ": "));
+                    console.log("");
+                    console.log("    latest: " + latest.version);
+                    console.log("    last updated: " + latest.time);
+                    if (npmObj.author && npmObj.author.name)
+                        console.log("    author: " + npmObj.author.name);
+                    if (npmObj.repository && npmObj.repository.url)
+                        console.log("    repo: " + npmObj.repository.url);
+                    console.log("");
+                }
+            }
+        });
+    }
+}
+
+function displayHelp() {
+    var packageJson = path.join(__dirname, '../package.json');
+    if (fs.existsSync(packageJson)) {
+        var packageConf = JSON.parse(fs.readFileSync(packageJson).toString());
+        console.log("");
+        console.log(colors.bold("  npm-latest [%s]"), packageConf.version);
+        console.log("");
+        console.log("    Usage: npm-latest [package]");
+        console.log("");
+
+    } else {
+        console.log("Can't locate package.json. Can't display help.");
+    }
+}
+
+function getLatest(npmObj) {
+    var versions = [];
+    for (var version in npmObj.time) {
+        versions.push(version);
+    }
+
+    var lastVersion = versions[versions.length - 1];
+    var lastTime = npmObj.time[lastVersion];
+
+    return {
+        "version": lastVersion,
+        "time": new Date(lastTime)
+    };
+}
+
+main();

@@ -1,0 +1,33 @@
+{
+    "name" : "npm-latest", 
+    "version" : "0.0.1",
+    "description" :"",
+    "homepage" : [
+       ""
+    ],
+    "repository" : {
+        "type" : "git", 
+        "url" : ""
+    },
+    "keywords" : [],
+    "author" : "JP Richardson <jprichardson@gmail.com>",
+    "licenses" : [ {
+        "type" : "MIT",
+        "url" : ""
+    }],
+    "dependencies" : {
+        "request": "2.10.x",
+        "colors": "0.6.x"
+    },
+     "devDepdencies":{},
+    "main" : "./lib/npm-latest.js",
+    "scripts": {
+        "test": "mocha test"
+    },
+    "bin": {
+        "npm-latest": "./bin/npm-latest"
+    },
+    "engines" : { 
+        "node" : ">=0.8.x" 
+    }
+}
