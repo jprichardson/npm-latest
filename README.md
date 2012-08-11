@@ -40,6 +40,7 @@ output:
         last updated: Fri Aug 03 2012 15:33:05 GMT-0500 (CDT)
         author: TJ Holowaychuk
         repo: git://github.com/visionmedia/express
+        description: Sinatra inspired web development framework
 
 
 

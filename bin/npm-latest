@@ -35,13 +35,14 @@ function main() {
 
                     console.log("");
                     console.log("  " + colors.blue(packageName + ": "));
-                    console.log("");
                     console.log("    latest: " + latest.version);
                     console.log("    last updated: " + latest.time);
                     if (npmObj.author && npmObj.author.name)
                         console.log("    author: " + npmObj.author.name);
                     if (npmObj.repository && npmObj.repository.url)
                         console.log("    repo: " + npmObj.repository.url);
+                    if (npmObj.description)
+                        console.log("    description: " + npmObj.description);
                     console.log("");
                 }
             }
