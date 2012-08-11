@@ -10,6 +10,15 @@ Why?
 
 I often forget which package version I need to put as a dependency in my packages. Running `npm info [package]` and then scrolling up scanning JSON became annoying.
 
+**Update:**
+
+Thanks to @timoxley for pointing out that a very viable alternative would be to just run:
+
+    npm install --save packagename@latest
+
+It has the added bonus of updating your package.json file as well.
+
+
 
 Installation
 ------------
