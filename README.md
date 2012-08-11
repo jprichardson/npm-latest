@@ -12,7 +12,7 @@ I often forget which package version I need to put as a dependency in my package
 
 **Update:**
 
-Thanks to @timoxley for pointing out that a very viable alternative would be to just run:
+Thanks to [@timoxley](https://github.com/timoxley) for pointing out that a very viable alternative would be to just run:
 
     npm install --save packagename@latest
 
