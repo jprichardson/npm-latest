@@ -8,45 +8,48 @@ var request = require('request')
 
 var NPM_URL = "http://registry.npmjs.org/%s";
 
+function showInfo(packageName) {
+    var url = util.format(NPM_URL, packageName);
+    request(url, function(err, response, body) {
+        if (err) {
+            console.log("ERROR: ");
+            console.log("\t" + err.message);
+            console.log("\thttp code: " + response.statusCode);
+        } else {
+            var npmObj = JSON.parse(body);
+            if (npmObj.error) {
+                if (npmObj.error === "not_found") {
+                    console.log("");
+                    console.log("  Package '%s' not found in NPM.", colors.blue(packageName));
+                    console.log("");
+                } else {
+                    console.log("ERROR");
+                    console.log(npmObj.reason);
+                }
+            } else {
+                var latest = getLatest(npmObj);
+
+                console.log("");
+                console.log("  " + colors.blue(packageName + ": "));
+                console.log("    latest: " + latest.version);
+                console.log("    last updated: " + latest.time);
+                if (npmObj.author && npmObj.author.name)
+                    console.log("    author: " + npmObj.author.name);
+                if (npmObj.repository && npmObj.repository.url)
+                    console.log("    repo: " + npmObj.repository.url);
+                if (npmObj.description)
+                    console.log("    description: " + npmObj.description);
+                console.log("");
+            }
+        }
+    });
+}
+
 function main() {
-    if (process.argv.length != 3) {
+    if (process.argv.length < 3) {
         displayHelp();
     } else {
-        var packageName = process.argv[2];
-        var url = util.format(NPM_URL, packageName);
-        request(url, function(err, response, body) {
-            if (err) {
-                console.log("ERROR: ");
-                console.log("\t" + err.message);
-                console.log("\thttp code: " + response.statusCode);
-            } else {
-                var npmObj = JSON.parse(body);
-                if (npmObj.error) {
-                    if (npmObj.error === "not_found") {
-                        console.log("");
-                        console.log("  Package '%s' not found in NPM.", colors.blue(packageName));
-                        console.log("");
-                    } else {
-                        console.log("ERROR");
-                        console.log(npmObj.reason);
-                    }
-                } else {
-                    var latest = getLatest(npmObj);
-
-                    console.log("");
-                    console.log("  " + colors.blue(packageName + ": "));
-                    console.log("    latest: " + latest.version);
-                    console.log("    last updated: " + latest.time);
-                    if (npmObj.author && npmObj.author.name)
-                        console.log("    author: " + npmObj.author.name);
-                    if (npmObj.repository && npmObj.repository.url)
-                        console.log("    repo: " + npmObj.repository.url);
-                    if (npmObj.description)
-                        console.log("    description: " + npmObj.description);
-                    console.log("");
-                }
-            }
-        });
+        process.argv.slice(2).forEach(showInfo);
     }
 }
 
