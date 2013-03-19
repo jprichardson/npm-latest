@@ -4,7 +4,8 @@ var request = require('request')
   , colors = require('colors')
   , path = require('path')
   , fs = require('fs')
-  , util = require('util');
+  , util = require('util')
+  , vcsurl = require('vcsurl')
 
 var NPM_URL = "http://registry.npmjs.org/%s";
 
@@ -36,7 +37,7 @@ function showInfo(packageName) {
                 if (npmObj.author && npmObj.author.name)
                     console.log("    author: " + npmObj.author.name);
                 if (npmObj.repository && npmObj.repository.url)
-                    console.log("    repo: " + npmObj.repository.url);
+                    console.log("    repo: " + vcsurl(npmObj.repository.url));
                 if (npmObj.description)
                     console.log("    description: " + npmObj.description);
                 console.log("");
