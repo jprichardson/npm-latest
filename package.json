@@ -20,6 +20,7 @@
       "type": "MIT"
     }
   ],
+  "main": "./lib/npm-latest.js",
   "dependencies": {
     "request": "2.10.x",
     "colors": "0.6.x",
@@ -27,7 +28,7 @@
   },
   "devDepdencies": {},
   "bin": {
-    "npm-latest": "./bin/npm-latest"
+    "npm-latest": "./bin/cli.js"
   },
   "engines": {
     "node": ">=0.8.x"
