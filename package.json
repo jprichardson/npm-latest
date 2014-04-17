@@ -22,8 +22,9 @@
   ],
   "main": "./lib/npm-latest.js",
   "dependencies": {
-    "request": "2.10.x",
     "colors": "0.6.x",
+    "lodash": "^2.4.1",
+    "request": "2.10.x",
     "vcsurl": "~0.1.1"
   },
   "devDepdencies": {},
