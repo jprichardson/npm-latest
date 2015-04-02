@@ -23,7 +23,7 @@
     "colors": "0.6.x",
     "lodash": "^2.4.1",
     "registry-url": "^3.0.0",
-    "request": "2.10.x",
+    "request": "^2.54.0",
     "vcsurl": "~0.1.1"
   },
   "devDepdencies": {},
