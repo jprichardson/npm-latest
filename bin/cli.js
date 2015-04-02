@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 'use strict'
 
-var npmLateset = require('./../lib/npm-latest'),
-  path = require('path'),
-  fs = require('fs'),
-  colors = require('colors'),
-  vcsurl = require('vcsurl')
+var npmLateset = require('./../lib/npm-latest')
+var path = require('path')
+var fs = require('fs')
+var colors = require('colors')
+var vcsurl = require('vcsurl')
 
 function main () {
   if (process.argv.length < 3) {
