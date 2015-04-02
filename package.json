@@ -28,8 +28,5 @@
   "devDepdencies": {},
   "bin": {
     "npm-latest": "./bin/cli.js"
-  },
-  "engines": {
-    "node": ">=0.8.x"
   }
 }
