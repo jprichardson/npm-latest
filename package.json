@@ -28,5 +28,12 @@
   "devDepdencies": {},
   "bin": {
     "npm-latest": "./bin/cli.js"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.1",
+    "standard": "^3.3.1"
+  },
+  "scripts": {
+    "test": "standard && mocha"
   }
 }
