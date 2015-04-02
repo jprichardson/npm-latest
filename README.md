@@ -3,6 +3,7 @@ Node.js - npm-latest
 
 Quickly find the latest version of a package in `npm`.
 
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 
 Why?
@@ -39,7 +40,7 @@ Example
 
 output:
 
-      express: 
+      express:
 
         latest: 3.0.0rc2
         last updated: Fri Aug 03 2012 15:33:05 GMT-0500 (CDT)
@@ -54,5 +55,5 @@ License
 
 (MIT License)
 
-Copyright 2012, JP Richardson <jprichardson@gmail.com>
+Copyright 2012-2015, JP Richardson <jprichardson@gmail.com>
 
