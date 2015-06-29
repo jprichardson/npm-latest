@@ -35,5 +35,9 @@
   },
   "scripts": {
     "test": "standard && mocha"
-  }
+  },
+  "files": [
+    "lib",
+    "bin"
+  ]
 }
