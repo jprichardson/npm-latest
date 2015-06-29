@@ -13,11 +13,7 @@
     "version"
   ],
   "author": "JP Richardson <jprichardson@gmail.com>",
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ],
+  "license": "MIT",
   "main": "./lib/npm-latest.js",
   "dependencies": {
     "colors": "0.6.x",
