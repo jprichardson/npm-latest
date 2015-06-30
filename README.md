@@ -9,20 +9,13 @@ Quickly find the latest version of a package in `npm`.
 Why?
 ----
 
-I often forget which package version I need to put as a dependency in my packages. Running `npm info [package]` and then scrolling up scanning JSON became annoying.
+Sometimes I want to know if a single package needs to be
+updated. Also, I'm a package creatin' fool: https://www.npmjs.com/~jprichardson - I need to
+know quickly if a package name is taken.
 
 **Update 2015-03-29:**
 
 Support config registry in `~/.npmrc` file，more on [registry-url](https://github.com/sindresorhus/registry-url)
-
-
-**Update:**
-
-Thanks to [@timoxley](https://github.com/timoxley) for pointing out that a very viable alternative would be to just run:
-
-    npm install --save packagename@latest
-
-It has the added bonus of updating your package.json file as well.
 
 
 
