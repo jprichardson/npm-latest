@@ -1,3 +1,8 @@
+1.0.1 / 2015-06-30
+------------------
+- fix license https://github.com/jprichardson/npm-latest/pull/7
+- specify files for npm https://github.com/jprichardson/npm-latest/pull/6
+
 1.0.0 / 2015-04-02
 ------------------
 - bug fix npm registery has updated to return (probably different mime type)
