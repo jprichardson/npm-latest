@@ -39,7 +39,6 @@ function main () {
           console.log('    description: ' + result.description)
         }
         console.log('')
-
       })
     })
   }
@@ -54,7 +53,6 @@ function displayHelp () {
     console.log('')
     console.log('    Usage: npm-latest [package]')
     console.log('')
-
   } else {
     console.log("Can't locate package.json. Can't display help.")
   }
