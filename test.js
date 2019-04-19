@@ -4,7 +4,7 @@ var path = require('path')
 
 /* global describe, it */
 
-var npmLatestBin = path.resolve('./bin/cli.js')
+var npmLatestBin = path.resolve('./cli.js')
 
 describe('npm-latest', function () {
   describe('> when package exists', function () {

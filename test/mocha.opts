@@ -1,3 +1,0 @@
---timeout 350000
---ui bdd
---reporter spec
